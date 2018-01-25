@@ -7,6 +7,16 @@ class CommentBox extends Component {
     super(props);
 
     this.state= { comment: '' };
+
+    console.log('heyyy this is first');
+  }
+
+  componentWillMount() {
+    console.log('this is second');
+  }
+
+  componentDidMount() {
+    console.log('this is last, the compoent has rendered')
   }
   handleChange(event) {
     this.setState({ comment: event.target.value });
@@ -22,10 +32,13 @@ class CommentBox extends Component {
   render() {
     return (
       <form onSubmit= { this.handleSubmit.bind(this) } className="comment-box">
+        <h4>Add a Reply</h4>
         <textarea 
-        value={ this.state.comment }
-        onChange={ this.handleChange.bind(this) } />
-        <button action='submit'>Submit Comment</button>
+          value={ this.state.comment }
+          onChange={ this.handleChange.bind(this) } />
+        <div>
+          <button action='submit'>Submit Comment</button>
+        </div>
       </form>
     );
   }
