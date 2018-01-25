@@ -7,6 +7,16 @@ class CommentBox extends Component {
     super(props);
 
     this.state= { comment: '' };
+
+    console.log('heyyy this is first');
+  }
+
+  componentWillMount() {
+    console.log('this is second');
+  }
+
+  componentDidMount() {
+    console.log('this is last, the compoent has rendered')
   }
   handleChange(event) {
     this.setState({ comment: event.target.value });
